@@ -4,7 +4,7 @@
  * Plugin Name: Woobox
  * Plugin URI: https://woobox.com/
  * Description: Embed Woobox promotions using a shortcode. Usage: [woobox offer='abcdef']
- * Version: 1.6
+ * Version: 1.7
  * Author: Woobox
  * Author URI: http://woobox.com
  * License: GPL
@@ -23,12 +23,13 @@ function createWooboxEmbed($atts, $content = null) {
 	if (!empty($args['offer'])) {
 		wp_enqueue_script('woobox-sdk',plugins_url('/woobox_requiresdk.js', __FILE__), array('jquery'), false, false);
 		$data_str = array();
+		$data_attrs = array();
 		foreach($args as $k=>$v) {
 			if($v!=='' && $v!=='embed' && $v!==0) {
 				if($k === 'params') {
 					$v = str_replace("'", '"', $v);
 				}
-				$data_attrs[] = "data-".$k."='".$v."'";
+				$data_attrs[] = 'data-' . esc_attr($k) . '="' . esc_attr($v) . '"';
 			}
 		} $embed_code = "<div class='woobox-offer' ".implode(" ", $data_attrs)."></div>";
 	} else {

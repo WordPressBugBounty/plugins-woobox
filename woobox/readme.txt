@@ -2,7 +2,7 @@
 Contributors: woobox
 Tags: marketing, promotions, contests, sweepstakes, giveaways
 Requires at least: 3.2
-Tested up to: 6.7
+Tested up to: 6.8.1
 Requires PHP: 5.2.4
 Stable tag: trunk
 License: GPLv2 or later
@@ -90,3 +90,7 @@ Added support for new template styles.
 Enhanced for WordPress 5.
 ### 1.5 ###
 Maintenance release (tested with latest WordPress).
+### 1.6 ###
+Maintenance release (tested with latest WordPress).
+### 1.7 ###
+Sanitize input attributes.
